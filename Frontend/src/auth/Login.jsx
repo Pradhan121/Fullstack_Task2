@@ -26,7 +26,8 @@ export default function Login() {
          .then((res)=>{
             toast.success('Register Successfuly');
             resetForm()
-            navigate('/')
+            localStorage.setItem('user', JSON.stringify(res.data.data))
+            navigate('/dashboard')
          })
          .catch((err)=>{console.log(err)})
        }

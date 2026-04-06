@@ -24,20 +24,9 @@ export default function Login() {
          axios.post('http://localhost:3000/api/login',values)
             
          .then((res)=>{
-             const user = res.data.data
-
-             localStorage.setItem('userRole', user.role)
-             localStorage.setItem('userName', user.username)
-
             toast.success('Register Successfuly');
-            resetForm();
-
-            if(user.role === 'admin'){
-                navigate('/dashboard')
-            }
-            else{
-                navigate('/dashboard')
-            }
+            resetForm()
+            navigate('/')
          })
          .catch((err)=>{console.log(err)})
        }

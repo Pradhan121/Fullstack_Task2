@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, Avatar } from '@mui/material'
 
 export default function User() {
   const [user, setUser] = useState(null)
@@ -19,10 +19,16 @@ export default function User() {
 
   return (
     <Box p={2}>
-      <Typography variant="h6">Logged in User</Typography>
-      <Typography>Name: {user.name || user.username}</Typography>
-      <Typography>Email: {user.email}</Typography>
-      {user.address && <Typography>Address: {user.address}</Typography>}
+      <Typography variant="h5" mb={2}>Logged In User</Typography>
+      {user.profile && (
+        <Avatar
+          src={`http://localhost:3000/images/${user.profile}`}
+          sx={{ width: 80, height: 80, mb: 2 }}
+        />
+      )}
+      <Typography><b>Username:</b> {user.username}</Typography>
+      <Typography><b>Email:</b> {user.email}</Typography>
+      <Typography><b>Role:</b> {user.role}</Typography>
     </Box>
   )
 }

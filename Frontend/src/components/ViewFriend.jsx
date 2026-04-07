@@ -34,6 +34,7 @@ export default function ViewFriend() {
         setOpen={setOpen}
         friendList={friendList}
         setFriendList={setFriendList}
+        showAddButton={false}
       />
 
       <table border={1}>

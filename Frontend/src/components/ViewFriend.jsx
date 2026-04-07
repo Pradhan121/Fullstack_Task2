@@ -56,7 +56,6 @@ export default function ViewFriend() {
 
   return (
     <>
-      {/* ✅ Sirf Table */}
       <table border={1}>
         <thead>
           <tr>
@@ -80,7 +79,6 @@ export default function ViewFriend() {
         </tbody>
       </table>
 
-      {/* ✅ Edit Dialog */}
       <Dialog open={open} onClose={handleCancel}>
         <DialogTitle>Update Friend</DialogTitle>
         <DialogContent>

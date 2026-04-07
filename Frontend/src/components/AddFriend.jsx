@@ -35,12 +35,10 @@ export default function AddFriend() {
 
   return (
     <Box>
-      {/* ✅ Sirf Button */}
       <Button variant="contained" onClick={() => setOpen(true)}>
         Add Friend
       </Button>
 
-      {/* ✅ Ek hi Dialog */}
       <Dialog open={open} onClose={handleCancel}>
         <DialogTitle>Add Friend</DialogTitle>
         <DialogContent>

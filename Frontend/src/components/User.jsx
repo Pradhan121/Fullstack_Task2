@@ -23,7 +23,7 @@ export default function User() {
       {user.profile && (
         <Avatar
           src={`http://localhost:3000/images/${user.profile}`}
-          sx={{ width: 80, height: 80, mb: 2 }}
+          sx={{ width: 100, height: 100, mb: 2 }}
         />
       )}
       <Typography><b>Username:</b> {user.username}</Typography>

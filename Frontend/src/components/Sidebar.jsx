@@ -4,17 +4,32 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Sidebar() {
     const navigate = useNavigate()
+  
+ const get = JSON.parse(localStorage.getItem('user'));
 
     const handleLogout=()=>{
-        localStorage.removeItem('userRole')
-        localStorage.removeItem('userName')
+        localStorage.removeItem('user')
         navigate('/')
     }
-    const menuItems = [
-  { name: "User", path: "/dashboard/user" },
-  { name: "AddFriend", path: "/dashboard/addfriend" },
-  { name: "ViewFriend", path: "/dashboard/viewfriend" },
-];
+   let menuItems = [];
+
+if (get?.role === "superAdmin") {
+  menuItems = [
+    { name: "User", path: "/dashboard/user" },
+    { name: "ViewFriend", path: "/dashboard/viewfriend" },
+  ];
+} else if (get?.role === "admin") {
+  menuItems = [
+    { name: "AddFriend", path: "/dashboard/addfriend" },
+    { name: "ViewFriend", path: "/dashboard/viewfriend" },
+  ];
+} else {
+  menuItems = [
+     { name: "User", path: "/dashboard/user" },
+    { name: "AddFriend", path: "/dashboard/addfriend" },
+    { name: "ViewFriend", path: "/dashboard/viewfriend" },
+  ]; 
+}
 
   return (
     <>

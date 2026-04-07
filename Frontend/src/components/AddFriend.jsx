@@ -49,7 +49,7 @@ export default function AddFriend({ fetchFriendList, editId, setEditId, open, se
   return (
     <Box>
       {showAddButton && (
-        <Button sx={{ border: "1px solid", mb: 2 }} onClick={() => setOpen(true)}>
+        <Button sx={{ border: "1px solid", mb: 2 }} onClick={()=>setOpen(true)}>
           Add Friend
         </Button>
       )}

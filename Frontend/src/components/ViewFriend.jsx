@@ -25,7 +25,7 @@ export default function ViewFriend() {
 
   return (
     <>
-      {/* ✅ showAddButton default true - button AddFriend me dikhega */}
+      
       <AddFriend
         fetchFriendList={fetchFriendList}
         editId={editId}
